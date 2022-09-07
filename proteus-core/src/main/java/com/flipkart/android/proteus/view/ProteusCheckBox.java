@@ -25,13 +25,14 @@ import android.view.View;
 import com.flipkart.android.proteus.ProteusView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatCheckBox;
 
 /**
  * CheckBox
  *
  * @author aditya.sharat
  */
-public class ProteusCheckBox extends android.widget.CheckBox implements ProteusView {
+public class ProteusCheckBox extends AppCompatCheckBox implements ProteusView {
 
   private Manager viewManager;
 
@@ -47,10 +48,6 @@ public class ProteusCheckBox extends android.widget.CheckBox implements ProteusV
     super(context, attrs, defStyleAttr);
   }
 
-  @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-  public ProteusCheckBox(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
-  }
 
   @Override
   public Manager getViewManager() {

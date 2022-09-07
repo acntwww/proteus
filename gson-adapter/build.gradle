@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 group = rootProject.ext.groupName
 version = rootProject.ext.versionName
@@ -38,6 +41,12 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -52,4 +61,18 @@ dependencies {
     })
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:1.10.19'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = rootProject.ext.groupName
+                artifactId = project.name
+                version = '1.0'
+            }
+        }
+    }
 }
