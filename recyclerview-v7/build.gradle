@@ -19,7 +19,6 @@ plugins {
     id 'maven-publish'
 }
 
-
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -58,4 +57,18 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = rootProject.ext.groupName
+                artifactId = project.name
+                version = '1.0'
+            }
+        }
+    }
 }
