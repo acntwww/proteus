@@ -25,13 +25,14 @@ import android.view.View;
 import com.flipkart.android.proteus.ProteusView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * TextView
  *
  * @author aditya.sharat
  */
-public class ProteusTextView extends android.widget.TextView implements ProteusView {
+public class ProteusTextView extends AppCompatTextView implements ProteusView {
 
   private Manager viewManager;
 
@@ -47,10 +48,6 @@ public class ProteusTextView extends android.widget.TextView implements ProteusV
     super(context, attrs, defStyleAttr);
   }
 
-  @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-  public ProteusTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
-  }
 
   @Override
   public Manager getViewManager() {

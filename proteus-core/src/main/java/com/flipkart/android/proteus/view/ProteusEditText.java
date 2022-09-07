@@ -16,22 +16,21 @@
 
 package com.flipkart.android.proteus.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
 import com.flipkart.android.proteus.ProteusView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatEditText;
 
 /**
  * EditText
  *
  * @author aditya.sharat
  */
-public class ProteusEditText extends android.widget.EditText implements ProteusView {
+public class ProteusEditText extends AppCompatEditText implements ProteusView {
 
   private Manager viewManager;
 
@@ -45,11 +44,6 @@ public class ProteusEditText extends android.widget.EditText implements ProteusV
 
   public ProteusEditText(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
-  }
-
-  @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-  public ProteusEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
   }
 
   @Override

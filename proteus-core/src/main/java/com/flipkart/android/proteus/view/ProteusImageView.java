@@ -25,13 +25,14 @@ import android.view.View;
 import com.flipkart.android.proteus.ProteusView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * ImageView
  *
  * @author aditya.sharat
  */
-public class ProteusImageView extends android.widget.ImageView implements ProteusView {
+public class ProteusImageView extends AppCompatImageView implements ProteusView {
 
   private Manager viewManager;
 
@@ -47,10 +48,6 @@ public class ProteusImageView extends android.widget.ImageView implements Proteu
     super(context, attrs, defStyleAttr);
   }
 
-  @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-  public ProteusImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
-  }
 
   @Override
   public Manager getViewManager() {
