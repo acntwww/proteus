@@ -19,6 +19,9 @@ plugins {
     id 'maven-publish'
 }
 
+group = rootProject.ext.groupName
+version = rootProject.ext.versionName
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
