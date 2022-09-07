@@ -27,7 +27,8 @@
         android:name=".DemoApplication"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ProteusActivity">
+        <activity android:name=".ProteusActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
