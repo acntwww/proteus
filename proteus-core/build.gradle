@@ -52,16 +52,16 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:1.10.19'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = rootProject.ext.groupName
-                artifactId = 'android-example'
-                version = '1.0'
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = rootProject.ext.groupName
+//                artifactId = 'proteus-core'
+//                version = '1.0'
+//            }
+//        }
+//    }
+//}
