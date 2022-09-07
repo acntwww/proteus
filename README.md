@@ -32,7 +32,6 @@ With Proteus, you can control your Apps layout from the backend (no WebViews). F
 allprojects {
     repositories {
         google()
-        jcenter()
         maven { url 'https://jitpack.io' }
     }
 }
