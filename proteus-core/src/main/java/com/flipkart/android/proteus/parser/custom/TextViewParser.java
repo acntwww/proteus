@@ -254,5 +254,13 @@ public class TextViewParser<T extends TextView> extends ViewTypeParser<T> {
         view.setHint(value);
       }
     });
+
+    addAttributeProcessor(Attributes.TextView.InputType, new StringAttributeProcessor<T>() {
+      @Override
+      public void setString(T view, String value) {
+        Integer type = ParseHelper.parseInputType(value);
+        view.setInputType(type == null ? 0 : type);
+      }
+    });
   }
 }

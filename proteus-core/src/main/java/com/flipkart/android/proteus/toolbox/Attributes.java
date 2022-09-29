@@ -166,6 +166,10 @@ public class Attributes {
     public static final String SingleLine = "singleLine";
     public static final String TextAllCaps = "textAllCaps";
     public static final String Hint = "hint";
+
+    //region nky changed
+    public static final String InputType = "inputType";
+    //endregion
   }
 
   public static class CheckBox {

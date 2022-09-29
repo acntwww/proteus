@@ -19,6 +19,7 @@ package com.flipkart.android.proteus.parser;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -86,6 +87,12 @@ public class ParseHelper {
   private static final Map<String, Integer> sTextAlignment = new HashMap<>();
   private static final Map<String, ImageView.ScaleType> sImageScaleType = new HashMap<>();
 
+  /**
+   * inputType的支持情况（部分支持），
+   * 参考链接：https://developer.android.com/reference/android/widget/TextView#attr_android:inputType
+   */
+  private static final Map<String, Integer> sInputTypeMap = new HashMap<>();
+
   static {
 
     sVisibilityMap.put(View.VISIBLE, new Primitive(View.VISIBLE));
@@ -133,6 +140,21 @@ public class ParseHelper {
       sTextAlignment.put(TEXT_ALIGNMENT_VIEW_START, View.TEXT_ALIGNMENT_VIEW_START);
       sTextAlignment.put(TEXT_ALIGNMENT_VIEW_END, View.TEXT_ALIGNMENT_VIEW_END);
     }
+
+
+    sInputTypeMap.put("date", InputType.TYPE_CLASS_DATETIME | InputType.TYPE_DATETIME_VARIATION_DATE);
+    sInputTypeMap.put("datetime", InputType.TYPE_CLASS_DATETIME | InputType.TYPE_DATETIME_VARIATION_NORMAL);
+    sInputTypeMap.put("number", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+    sInputTypeMap.put("numberDecimal", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+    sInputTypeMap.put("numberPassword", InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+    sInputTypeMap.put("numberSigned",InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED);
+    sInputTypeMap.put("phone", InputType.TYPE_CLASS_PHONE);
+    sInputTypeMap.put("text", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+    sInputTypeMap.put("textAutoComplete", InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+    sInputTypeMap.put("textAutoCorrect", InputType.TYPE_TEXT_FLAG_AUTO_CORRECT);
+    sInputTypeMap.put("textCapCharacters",  InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+    sInputTypeMap.put("textPassword", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+    sInputTypeMap.put("time", InputType.TYPE_CLASS_DATETIME | InputType.TYPE_DATETIME_VARIATION_TIME);
   }
 
   public static int parseInt(String attributeValue) {
@@ -369,6 +391,10 @@ public class ParseHelper {
    */
   public static Integer parseTextAlignment(String attributeValue) {
     return !TextUtils.isEmpty(attributeValue) ? sTextAlignment.get(attributeValue) : null;
+  }
+
+  public static Integer parseInputType(String attributeValue) {
+    return !TextUtils.isEmpty(attributeValue) ? sInputTypeMap.get(attributeValue) : null;
   }
 
   public static class IntResult {
