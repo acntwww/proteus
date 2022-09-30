@@ -1,7 +1,7 @@
 package com.flipkart.android.proteus.parser.custom;
 
 import android.view.ViewGroup;
-import android.widget.RadioButton;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,25 +11,23 @@ import com.flipkart.android.proteus.ProteusView;
 import com.flipkart.android.proteus.parser.ViewParser;
 import com.flipkart.android.proteus.value.Layout;
 import com.flipkart.android.proteus.value.ObjectValue;
-import com.flipkart.android.proteus.view.ProteusRadioButton;
+import com.flipkart.android.proteus.view.ProteusCompoundButton;
 
-public class RadioButtonParser<T extends RadioButton> extends ViewParser<T> {
+public class CompoundButtonParser<V extends CompoundButton> extends ViewParser<V> {
 
-    @NonNull
     @Override
     public String getType() {
-        return "RadioButton";
+        return "CompoundButton";
     }
 
-    @Nullable
     @Override
     public String getParentType() {
-        return "CompoundButton";
+        return "Button";
     }
 
     @NonNull
     @Override
     public ProteusView createView(@NonNull ProteusContext context, @NonNull Layout layout, @NonNull ObjectValue data, @Nullable ViewGroup parent, int dataIndex) {
-       return new ProteusRadioButton(context);
+        return new ProteusCompoundButton(context);
     }
 }
