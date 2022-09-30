@@ -13,6 +13,9 @@ import com.flipkart.android.proteus.value.Layout;
 import com.flipkart.android.proteus.value.ObjectValue;
 import com.flipkart.android.proteus.view.ProteusCompoundButton;
 
+/**
+ * Created by nky on 2022/09/30.
+ */
 public class CompoundButtonParser<V extends CompoundButton> extends ViewParser<V> {
 
     @Override

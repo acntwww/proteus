@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import com.flipkart.android.proteus.ProteusContext;
 import com.flipkart.android.proteus.ProteusView;
 import com.flipkart.android.proteus.parser.ViewParser;
+import com.flipkart.android.proteus.processor.StringAttributeProcessor;
+import com.flipkart.android.proteus.toolbox.Attributes;
 import com.flipkart.android.proteus.value.Layout;
 import com.flipkart.android.proteus.value.ObjectValue;
 import com.flipkart.android.proteus.view.ProteusRadioGroup;
@@ -37,5 +39,18 @@ public class RadioGroupParser<T extends RadioGroup> extends ViewParser<T> {
         return new ProteusRadioGroup(context);
     }
 
-
+    @Override
+    protected void addAttributeProcessors() {
+        addAttributeProcessor(Attributes.RadioGroup.CheckedButton, new StringAttributeProcessor<T>(){
+            @Override
+            public void setString(T view, String value) {
+                if (view.getContext() instanceof ProteusContext) {
+                    final int uniqueViewId = ((ProteusContext) view.getContext()).getInflater().getUniqueViewId(value);
+                    // This is disgustingly good:
+                    //WE have to set checked button AFTER the view is added to the group
+                    view.post(() -> view.check(uniqueViewId));
+                }
+            }
+        });
+    }
 }

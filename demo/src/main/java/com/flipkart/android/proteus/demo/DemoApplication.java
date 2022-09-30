@@ -28,7 +28,7 @@ import retrofit2.Retrofit;
 
 public class DemoApplication extends Application {
 
-  private static final String BASE_URL = "http://172.20.10.2:8080/data/";
+  private static final String BASE_URL = "http://172.20.10.3:8080/data/";
 
   private Gson gson;
   private Retrofit retrofit;

@@ -219,4 +219,8 @@ public class Attributes {
     public static final String IndeterminateTint = "indeterminateTint";
     public static final String SecondaryProgressTint = "secondaryProgressTint";
   }
+
+  public static class RadioGroup {
+    public static final String CheckedButton = "checkedButton";
+  }
 }

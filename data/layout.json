@@ -12,6 +12,41 @@
       "background": "#efefef",
       "children": [
         {
+          "type": "RadioGroup",
+          "layout_width": "match_parent",
+          "layout_height": "wrap_content",
+          "padding": "20dp",
+          "id": "radioGroupWrap",
+          "orientation": "horizontal",
+          "checkedButton": "radioButton2",
+          "children": [
+            {
+              "type": "RadioButton",
+              "layout_width": "0dp",
+              "layout_height": "wrap_content",
+              "layout_weight": "1",
+              "text": "RB1",
+              "id": "radioButton1"
+            },
+            {
+              "type": "RadioButton",
+              "layout_width": "0dp",
+              "layout_height": "wrap_content",
+              "layout_weight": "1",
+              "text": "RB2",
+              "id": "radioButton2"
+            },
+            {
+              "type": "RadioButton",
+              "layout_width": "0dp",
+              "layout_height": "wrap_content",
+              "layout_weight": "1",
+              "text": "RB3",
+              "id": "radioButton3"
+            }
+          ]
+        },
+        {
           "type": "CardView",
           "layout_width": "match_parent",
           "layout_height": "wrap_content",

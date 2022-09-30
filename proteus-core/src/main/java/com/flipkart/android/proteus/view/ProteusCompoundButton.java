@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 
 import com.flipkart.android.proteus.ProteusView;
 
+/**
+ * Created by nky on 2022/09/30.
+ */
 public class ProteusCompoundButton extends CompoundButton implements ProteusView {
 
     private Manager viewManager;
