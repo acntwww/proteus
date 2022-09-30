@@ -35,6 +35,7 @@ import android.widget.RelativeLayout;
 import com.flipkart.android.proteus.ProteusConstants;
 import com.flipkart.android.proteus.ProteusContext;
 import com.flipkart.android.proteus.ProteusView;
+import com.flipkart.android.proteus.R;
 import com.flipkart.android.proteus.ViewTypeParser;
 import com.flipkart.android.proteus.processor.AttributeProcessor;
 import com.flipkart.android.proteus.processor.BooleanAttributeProcessor;
@@ -395,6 +396,7 @@ public class ViewParser<V extends View> extends ViewTypeParser<V> {
       public void setString(final V view, String value) {
         if (view instanceof ProteusView) {
           view.setId(((ProteusView) view).getViewManager().getContext().getInflater().getUniqueViewId(value));
+          view.setTag(R.id.proteus_origin_view_id_str, value);
         }
 
         // set view id resource name
