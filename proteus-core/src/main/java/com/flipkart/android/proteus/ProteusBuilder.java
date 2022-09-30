@@ -81,9 +81,9 @@ public class ProteusBuilder {
       builder.register(new CheckBoxParser());
       builder.register(new ProgressBarParser());
       builder.register(new HorizontalProgressBarParser());
+      builder.register(new CompoundButtonParser());
       builder.register(new RadioGroupParser());
       builder.register(new RadioButtonParser());
-      builder.register(new CompoundButtonParser());
 
       // register the default functions
       builder.register(Function.DATE);
