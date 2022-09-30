@@ -400,7 +400,10 @@ public abstract class DrawableValue extends Value {
           states[index] = ParseHelper.parseBoolean(entry.getValue()) ? stateInteger : -stateInteger;
           index++;
         } else {
-          throw new IllegalArgumentException(entry.getKey() + " is not a valid state");
+          if (!entry.getKey().equals(DRAWABLE_STR)) {
+            throw new IllegalArgumentException(entry.getKey() + " is not a valid state");
+          }
+
         }
       }
       return new Pair<>(states, drawable);

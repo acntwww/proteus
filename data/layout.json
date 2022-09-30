@@ -47,6 +47,50 @@
           ]
         },
         {
+          "type": "Button",
+          "layout_width": "60dp",
+          "layout_height": "wrap_content",
+          "text": "Test\nBtn",
+          "background": {
+            "type": "selector",
+            "children": [
+              {
+                "state_pressed": "false",
+                "drawable": {
+                  "type": "shape",
+                  "shape": "rectangle",
+                  "children": [
+                    {
+                      "type": "stroke",
+                      "width": "1px",
+                      "color": "#000000"
+                    }
+                  ]
+                }
+              },{
+                "state_pressed": "true",
+                "drawable": {
+                  "type": "shape",
+                  "shape": "rectangle",
+                  "children": [
+                    {
+                      "type": "stroke",
+                      "width": "2px",
+                      "color": "#FF0000"
+                    },{
+                        "type": "solid",
+                        "color": "#00FF00"
+                    },{
+                      "type": "corners",
+                       "radius": "4dp"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
           "type": "CardView",
           "layout_width": "match_parent",
           "layout_height": "wrap_content",
