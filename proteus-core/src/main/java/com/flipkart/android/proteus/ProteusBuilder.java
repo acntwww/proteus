@@ -18,6 +18,7 @@ package com.flipkart.android.proteus;
 
 import com.flipkart.android.proteus.parser.IncludeParser;
 import com.flipkart.android.proteus.parser.ViewParser;
+import com.flipkart.android.proteus.parser.custom.AutoCompleteTextViewParser;
 import com.flipkart.android.proteus.parser.custom.ButtonParser;
 import com.flipkart.android.proteus.parser.custom.CheckBoxParser;
 import com.flipkart.android.proteus.parser.custom.CompoundButtonParser;
@@ -84,6 +85,7 @@ public class ProteusBuilder {
       builder.register(new CompoundButtonParser());
       builder.register(new RadioGroupParser());
       builder.register(new RadioButtonParser());
+      builder.register(new AutoCompleteTextViewParser());
 
       // register the default functions
       builder.register(Function.DATE);
