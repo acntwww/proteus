@@ -167,6 +167,7 @@ public class Attributes {
     public static final String TextAllCaps = "textAllCaps";
     public static final String Hint = "hint";
     public static final String LetterSpacing = "letterSpacing";
+    public static final String ImeOptions = "imeOptions";
 
     //region nky changed
     public static final String InputType = "inputType";

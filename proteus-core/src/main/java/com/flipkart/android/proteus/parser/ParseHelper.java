@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -86,6 +87,7 @@ public class ParseHelper {
   private static final Map<String, Integer> sVisibilityMode = new HashMap<>();
   private static final Map<String, Integer> sTextAlignment = new HashMap<>();
   private static final Map<String, ImageView.ScaleType> sImageScaleType = new HashMap<>();
+  private static final Map<String, Integer> sImeOptionsMap = new HashMap<>();
 
   /**
    * inputType的支持情况（部分支持），
@@ -155,6 +157,15 @@ public class ParseHelper {
     sInputTypeMap.put("textCapCharacters",  InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
     sInputTypeMap.put("textPassword", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
     sInputTypeMap.put("time", InputType.TYPE_CLASS_DATETIME | InputType.TYPE_DATETIME_VARIATION_TIME);
+
+    sImeOptionsMap.put("actionDone", EditorInfo.IME_ACTION_DONE);
+    sImeOptionsMap.put("actionGo", EditorInfo.IME_ACTION_GO);
+    sImeOptionsMap.put("actionNext", EditorInfo.IME_ACTION_NEXT);
+    sImeOptionsMap.put("actionNone", EditorInfo.IME_ACTION_NONE);
+    sImeOptionsMap.put("actionPrevious", EditorInfo.IME_ACTION_PREVIOUS);
+    sImeOptionsMap.put("actionSearch", EditorInfo.IME_ACTION_SEARCH);
+    sImeOptionsMap.put("actionSend", EditorInfo.IME_ACTION_SEND);
+
   }
 
   public static int parseInt(String attributeValue) {
@@ -395,6 +406,10 @@ public class ParseHelper {
 
   public static Integer parseInputType(String attributeValue) {
     return !TextUtils.isEmpty(attributeValue) ? sInputTypeMap.get(attributeValue) : null;
+  }
+
+  public static Integer parseImeOptions(String attributeValue) {
+    return !TextUtils.isEmpty(attributeValue) ? sImeOptionsMap.get(attributeValue) : null;
   }
 
   public static class IntResult {

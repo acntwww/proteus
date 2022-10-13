@@ -269,5 +269,15 @@ public class TextViewParser<T extends TextView> extends ViewTypeParser<T> {
         view.setLetterSpacing(dimension);
       }
     });
+
+    addAttributeProcessor(Attributes.TextView.ImeOptions, new StringAttributeProcessor<T>() {
+      @Override
+      public void setString(T view, String value) {
+        Integer imeOption = ParseHelper.parseImeOptions(value);
+        if (imeOption != null) {
+          view.setImeOptions(imeOption);
+        }
+      }
+    });
   }
 }
