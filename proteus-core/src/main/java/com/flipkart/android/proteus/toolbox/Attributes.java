@@ -166,6 +166,7 @@ public class Attributes {
     public static final String SingleLine = "singleLine";
     public static final String TextAllCaps = "textAllCaps";
     public static final String Hint = "hint";
+    public static final String LetterSpacing = "letterSpacing";
 
     //region nky changed
     public static final String InputType = "inputType";

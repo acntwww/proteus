@@ -262,5 +262,12 @@ public class TextViewParser<T extends TextView> extends ViewTypeParser<T> {
         view.setInputType(type == null ? 0 : type);
       }
     });
+
+    addAttributeProcessor(Attributes.TextView.LetterSpacing, new DimensionAttributeProcessor<T>(){
+      @Override
+      public void setDimension(T view, float dimension) {
+        view.setLetterSpacing(dimension);
+      }
+    });
   }
 }
